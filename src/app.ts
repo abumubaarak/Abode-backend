@@ -3,6 +3,9 @@ import cors from "cors";
 import express, { Application } from "express";
 import helmet from "helmet";
 import { realTimeMessaging } from "./instant-messaging";
+import { router as ConversationRoute } from "./instant-messaging/conversation/conversationRoute";
+import MessageRoute from "./instant-messaging/messages/messageRoute";
+import { errorMiddleware } from "./middleware/error.middleware";
 
 const app: Application = express();
 
@@ -12,5 +15,10 @@ app.use(cors());
 app.use(express.json());
 
 realTimeMessaging(app)
+
+app.use("/conversations", ConversationRoute);
+app.use("/messages", MessageRoute);
+
+app.use(errorMiddleware);
 
 export { app };
