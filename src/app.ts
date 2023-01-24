@@ -17,7 +17,7 @@ app.use(express.json());
 
 realTimeMessaging(app)
 
-app.get("/", (res: Response, req: Request) => {
+app.get("/home", (res: Response, req: Request) => {
     res.send(200).json({
         messages: "Welcome to Abode backend for chat"
     })
