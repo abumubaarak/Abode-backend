@@ -5,6 +5,7 @@ import { asyncHandler } from "../middleware/async";
 import response from "../utils/response";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY ?? " ", {
+  //@ts-ignore
   apiVersion: "2020-08-27",
 });
 
