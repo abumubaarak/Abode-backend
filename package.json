@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Abode Backend",
   "main": "index.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "start": "node dist/server.js",
     "dev": "tsnd --respawn --pretty --transpile-only src/server.ts",
