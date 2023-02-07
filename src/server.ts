@@ -3,7 +3,7 @@ import "dotenv/config";
 import { app } from "./app";
 import { connectDb } from "./config/db";
 
-const PORT: number = parseInt(process.env.PORT || ("4000" as string), 10);
+const PORT: number = parseInt(process.env.PORT || ("8080" as string), 10);
 
 connectDb();
 
