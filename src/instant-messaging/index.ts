@@ -8,7 +8,7 @@ export const realTimeMessaging = (app: Application) => {
   const httpServer = createServer(app);
   const io: Server = new Server(httpServer, {
     cors: {
-      origin: "http://localhost:7000",
+      origin: "http://localhost:8080",
     },
   });
   io.on("connection", (socket) => {
@@ -60,7 +60,7 @@ export const realTimeMessaging = (app: Application) => {
     });
   });
 
-  httpServer.listen(9000, "0.0.0.0", () => {
-    console.log(`Server running at http://0.0.0.0:9000/`);
+  httpServer.listen(9000, () => {
+    console.log(`Server running at 9000/`);
   });
 };
